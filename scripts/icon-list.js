@@ -10,7 +10,11 @@ function process() {
     const elementorInput = document.getElementById('elementorCode').value;
     const msg = document.getElementById('msg');
 
-    if (!elementorInput) return alert("Please paste your Elementor code!");
+    if (!elementorInput) {
+        msg.style.color = "red";
+        msg.innerText = "Please paste your Elementor code!";
+        return;
+    }
 
     // --- STEP 1: Flatten the List ---
     const temp = document.createElement('div');
