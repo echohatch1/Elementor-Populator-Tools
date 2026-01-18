@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Elementor Icon List Populator</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Elementor Icon List Populator</h1>
+
+        <label>1. Paste your list copied from a word processor here</label>
+
+        <div class="toolbar">
+            <button onclick="execCmd('bold')">B</button>
+            <button onclick="execCmd('italic')">I</button>
+            <button onclick="execCmd('insertUnorderedList')">&bull; List</button>
+            <button onclick="execCmd('insertOrderedList')">1. List</button>
+            <button onclick="addLink()">Link</button>
+        </div>
+
+        <div id="richInput" class="editor-box" contenteditable="true" placeholder="Paste your bulleted list here...">
+        </div>
+
+        <label>2. Paste the Elementor Icon List you want to populate here</label>
+
+        <textarea id="elementorCode" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"
+            placeholder='elementorData{"type":...'></textarea>
+
+        <button class="process-btn" onclick="process()">Populate List & Copy to Clipboard</button>
+
+        <div id="msg" class="status"></div>
+    </div>
+
+    <script src="scripts/icon-list.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Elementor Accordion Populator</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Accordion Populator</h1>
+
+        <label>1. Your List (formatted like so "Title: Content" with each list item separated by a new line)</label>
+        <textarea id="textList" style="height: 150px;" placeholder="Beauty: This is the content..."></textarea>
+
+        <label>2. Copied Elementor Accordion Widget Code</label>
+        <textarea id="elementorCode" style="height: 100px;" placeholder='elementorData{"type":...' spellcheck="false"
+            autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+
+        <button class="process-btn" onclick="process()">Update & Copy to Clipboard</button>
+
+        <div id="msg" class="status"></div>
+
+        <p class="info">
+            <strong>How to use:</strong><br>
+            1. Make sure your Accordion in Elementor has enough items already.<br>
+            2. Ensure that each accordion item contains a Text Editor widget (this tool doesn't currently support other
+            widgets).<br>
+            3. Copy the accordion widget and paste it in box #2.<br>
+            4. Click the button and use <strong>"Paste from other site"</strong> in Elementor.
+        </p>
+        <p class="info"><strong>Note:</strong> Does not yet support text formatting (for bolding, links, etc.).</p>
+    </div>
+
+    <script src="scripts/accordion.js"></script>
+
+</body>
+
+</html>
