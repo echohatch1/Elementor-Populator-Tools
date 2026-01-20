@@ -175,22 +175,22 @@ textarea {
 .tooltip-content {
     visibility: hidden;
     width: 250px;
+    max-width: calc(100vw - 80px);
     background-color: #333;
     color: #fff;
     text-align: left;
     border-radius: 6px;
     padding: 10px;
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     bottom: 125%;
     /* Position above */
-    left: 50%;
-    margin-left: -125px;
-    /* Center */
+    right: -10px;
+    /* Anchor to right edge */
     opacity: 0;
     transition: opacity 0.3s;
     font-size: 0.85em;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     font-weight: normal;
     line-height: 1.4;
 }
@@ -200,8 +200,8 @@ textarea {
     position: absolute;
     top: 100%;
     /* Arrow at bottom */
-    left: 50%;
-    margin-left: -5px;
+    right: 15px;
+    /* Arrow aligns with icon */
     border-width: 5px;
     border-style: solid;
     border-color: #333 transparent transparent transparent;
