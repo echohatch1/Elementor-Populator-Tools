@@ -3,6 +3,7 @@ var quill = new Quill('#editor-container', {
     theme: 'snow',
     modules: {
         toolbar: [
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
             ['bold', 'italic'],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             ['link']
