@@ -41,19 +41,30 @@
 
         <div id="msg" class="status"></div>
 
-        <p class="info">
-            <strong>How to use:</strong><br>
-            1. Make sure your Accordion in Elementor has enough items already.<br>
-            2. Ensure that each accordion item contains a Text Editor widget.<br>
-            3. Copy the accordion widget and paste it in box #2.<br>
-            4. Click the button and use <strong>"Paste from other site"</strong> in Elementor.
-        </p>
-        <p class="info">
-            <strong>Formatting Tips:</strong><br>
-            - <strong>Headings:</strong> Use H3/H4 to mark the start of a new item.<br>
-            - <strong>Bold Line:</strong> Make a whole line bold to mark it as a title.<br>
-            - <strong>Colon:</strong> Use "Title: Content" for simple lists.
-        </p>
+        <div class="instructions">
+            <h3>How to Use</h3>
+            <ol>
+                <li><strong>Prepare Elementor:</strong> Create an Accordion widget with enough items. Each item
+                    <em>must</em> contain an inner <strong>Text Editor</strong> widget.</li>
+                <li><strong>Choose Strategy:</strong> Select how you want to split your content (Headings, Bold Lines,
+                    or Colon).</li>
+                <li><strong>Input Content:</strong> Paste or type your content into the editor above.</li>
+                <li><strong>Paste Widget Code:</strong> Copy your Accordion widget from Elementor and paste the code
+                    into the bottom box.</li>
+                <li><strong>Process:</strong> Click "Update" and then use <strong>"Paste from other site"</strong> on
+                    your widget in Elementor.</li>
+            </ol>
+
+            <h3>Parsing Strategies</h3>
+            <ul>
+                <li><strong>Headings (Default):</strong> Use <code>H1-H6</code> to mark titles. Everything between
+                    headings becomes the content.</li>
+                <li><strong>Bold Line:</strong> Any line that is <strong>completely bold</strong> will be treated as a
+                    title.</li>
+                <li><strong>Colon:</strong> Use the format <code>Title: Content</code> for simple, single-line items.
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

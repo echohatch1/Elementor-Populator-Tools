@@ -89,3 +89,28 @@ textarea {
     margin-top: 10px;
     line-height: 1.4;
 }
+
+.instructions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #444;
+}
+
+.instructions h3 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.instructions ol,
+.instructions ul {
+    font-size: 0.9em;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+}
