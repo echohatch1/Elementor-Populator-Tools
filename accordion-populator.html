@@ -10,13 +10,13 @@
 <body>
 
     <div class="card">
-        <h1>Accordion Populator</h1>
+        <h1>Elementor Accordion Populator</h1>
 
-        <label>1. Your List (Paste from Word/Docs)</label>
+        <label>1. Your Content (Paste from Word/Docs)</label>
 
         <!-- Parsing Strategy Selector -->
         <div style="margin-bottom: 20px; background: #eef; padding: 15px; border-radius: 5px;">
-            <label style="margin:0 0 10px 0; font-size: 0.9em; color:#555;">Split Items By:</label>
+            <label style="margin:0 0 10px 0; font-size: 0.9em; color:#555;">Parsing Strategy (Split Items By):</label>
             <div style="display: flex; gap: 20px; font-size: 0.9em;">
                 <label style="margin:0; font-weight:normal; cursor:pointer;">
                     <input type="radio" name="splitStrategy" value="heading" checked> Headings (H1-H6)
@@ -37,7 +37,7 @@
         <textarea id="elementorCode" style="height: 100px;" placeholder='elementorData{"type":...' spellcheck="false"
             autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
 
-        <button class="process-btn" onclick="process()">Update & Copy to Clipboard</button>
+        <button class="process-btn" onclick="process()">Populate Accordion & Copy to Clipboard</button>
 
         <div id="msg" class="status"></div>
 
@@ -45,7 +45,8 @@
             <h3>How to Use</h3>
             <ol>
                 <li><strong>Prepare Elementor:</strong> Create an Accordion widget with enough items. Each item
-                    <em>must</em> contain an inner <strong>Text Editor</strong> widget.</li>
+                    <em>must</em> contain an inner <strong>Text Editor</strong> widget.
+                </li>
                 <li><strong>Choose Strategy:</strong> Select how you want to split your content (Headings, Bold Lines,
                     or Colon).</li>
                 <li><strong>Input Content:</strong> Paste or type your content into the editor above.</li>

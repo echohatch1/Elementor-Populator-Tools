@@ -125,10 +125,10 @@ function process() {
         navigator.clipboard.writeText(result).then(() => {
             if (listItems.length > updateCount) {
                 msg.style.color = "#d97706"; // Amber/Orange
-                msg.innerText = `Partial Success! Populated ${updateCount} of ${listItems.length} items. (Widget was too small). Paste back into Elementor.`;
+                msg.innerText = `Partial Success! Populated ${updateCount} of ${listItems.length} items. (Widget was too small). Use 'Paste from other site' in Elementor.`;
             } else {
                 msg.style.color = "green";
-                msg.innerText = `Success! Populated all ${updateCount} items. Paste back into Elementor.`;
+                msg.innerText = `Success! Populated all ${updateCount} items. Use 'Paste from other site' in Elementor.`;
             }
         }).catch(err => {
             console.error(err);
