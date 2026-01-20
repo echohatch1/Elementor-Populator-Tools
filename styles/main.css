@@ -27,34 +27,19 @@ h2 {
     padding-bottom: 10px;
 }
 
-.toolbar {
+/* Quill Overrides (Optional) */
+.ql-toolbar {
+    border-radius: 5px 5px 0 0;
+    font-family: 'Segoe UI', sans-serif;
     background: #f8f9fa;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-bottom: none;
-    border-radius: 6px 6px 0 0;
-    display: flex;
-    gap: 5px;
+    border-color: #ddd !important;
 }
 
-.toolbar button {
-    background: white;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-.editor-box {
-    border: 1px solid #ddd;
-    min-height: 200px;
-    padding: 15px;
-    background: #fff;
-    border-radius: 0 0 6px 6px;
-    overflow-y: auto;
-    outline: none;
-    line-height: 1.6;
+.ql-container {
+    border-radius: 0 0 5px 5px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    border-color: #ddd !important;
 }
 
 label {

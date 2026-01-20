@@ -1,12 +1,18 @@
-function execCmd(cmd) { document.execCommand(cmd, false, null); }
-
-function addLink() {
-    const url = prompt("Enter URL:", "https://");
-    if (url) document.execCommand('createLink', false, url);
-}
+// Initialize Quill
+var quill = new Quill('#editor-container', {
+    theme: 'snow',
+    modules: {
+        toolbar: [
+            ['bold', 'italic'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            ['link']
+        ]
+    }
+});
 
 function process() {
-    const richBox = document.getElementById('richInput');
+    // Read from Quill's root
+    const richBox = quill.root;
     const elementorInput = document.getElementById('elementorCode').value;
     const msg = document.getElementById('msg');
 
@@ -78,7 +84,14 @@ function process() {
         for (let i = 0; i < items.length; i++) {
             if (i >= iconItems.length) break;
 
-            let cleanContent = items[i].replace(/<\/?(li|ul|ol|p|div)[^>]*>/gi, '');
+            // Quill output is generally cleaner, but we still strip block tags to just get inner content if needed within Elementor's strict fields
+            // For Icon List 'text' field, it accepts some HTML but generally expects inline content.
+            // Quill wraps lines in <p> by default. We want just the content inside the <p> or <li>.
+
+            // Note: If the item coming from 'items' array (flattened) is "Some <b>Bold</b> Text", that is good.
+            // If it is "<p>Some Text</p>", the regex below strips the P.
+
+            let cleanContent = items[i].replace(/<\/?(li|ul|ol|p|div|h[1-6])[^>]*>/gi, '');
             iconItems[i].text = cleanContent;
             updateCount++;
         }
