@@ -17,27 +17,27 @@
         <label>1. Your Content (Paste from Word/Docs)</label>
 
         <!-- Parsing Strategy Selector -->
-        <div style="margin-bottom: 20px; background: #eef; padding: 15px; border-radius: 5px;">
-            <label style="margin:0 0 10px 0; font-size: 0.9em; color:#555;">Parsing Strategy (Split Items By):</label>
-            <div style="display: flex; gap: 20px; font-size: 0.9em;">
-                <label style="margin:0; font-weight:normal; cursor:pointer;">
+        <div class="strategy-selector">
+            <label class="strategy-label">Parsing Strategy (Split Items By):</label>
+            <div class="strategy-options">
+                <label class="strategy-option">
                     <input type="radio" name="splitStrategy" value="heading" checked> Headings (H1-H6)
                 </label>
-                <label style="margin:0; font-weight:normal; cursor:pointer;">
+                <label class="strategy-option">
                     <input type="radio" name="splitStrategy" value="bold"> Bold Line
                 </label>
-                <label style="margin:0; font-weight:normal; cursor:pointer;">
+                <label class="strategy-option">
                     <input type="radio" name="splitStrategy" value="colon"> Colon (Title: Content)
                 </label>
             </div>
         </div>
 
         <!-- Quill Editor Container -->
-        <div id="editor-container" style="height: 200px; background:white;"></div>
+        <div id="editor-container"></div>
 
         <label>2. Copied Elementor Accordion Widget Code</label>
-        <textarea id="elementorCode" style="height: 100px;" placeholder='elementorData{"type":...' spellcheck="false"
-            autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+        <textarea id="elementorCode" placeholder='elementorData{"type":...' spellcheck="false" autocomplete="off"
+            autocorrect="off" autocapitalize="off"></textarea>
 
         <button class="process-btn" onclick="process()">Populate Accordion & Copy to Clipboard</button>
 
