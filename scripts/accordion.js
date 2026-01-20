@@ -106,7 +106,17 @@ function process() {
                 updateCount++;
             } else {
                 console.warn(`Item ${i + 1}: Could not find a Text Editor widget inside the accordion item.`);
+                msg.style.color = "red";
+                msg.innerText = `Validation Error: Accordion Item #${i + 1} does not contain a 'Text Editor' widget. This tool requires all accordion items to have a Text Editor inside.`;
+                return;
             }
+        }
+
+        // 4. Output
+        if (updateCount === 0 && listItems.length > 0) {
+            msg.style.color = "red";
+            msg.innerText = "Error: Titles were updated, but no content could be populated. No internal 'Text Editor' widgets were found.";
+            return;
         }
 
         // 4. Output
