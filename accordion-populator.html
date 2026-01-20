@@ -18,7 +18,17 @@
 
         <!-- Parsing Strategy Selector -->
         <div class="strategy-selector">
-            <label class="strategy-label">Parsing Strategy (Split Items By):</label>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                <label class="strategy-label" style="margin:0;">Parsing Strategy (Split Items By):</label>
+                <div class="tooltip-container">
+                    <span class="tooltip-icon">?</span>
+                    <div class="tooltip-content">
+                        <strong>Headings (Default):</strong> H1-H6 mark titles.<br>
+                        <strong>Bold Line:</strong> Entire bold line is a title.<br>
+                        <strong>Colon:</strong> 'Title: Content' format (on same line).
+                    </div>
+                </div>
+            </div>
             <div class="strategy-options">
                 <label class="strategy-option">
                     <input type="radio" name="splitStrategy" value="heading" checked> Headings (H1-H6)
@@ -57,16 +67,6 @@
                 <li><strong>Process:</strong> Click "Update" and then use <strong>"Paste from other site"</strong> on
                     your widget in Elementor.</li>
             </ol>
-
-            <h3>Parsing Strategies</h3>
-            <ul>
-                <li><strong>Headings (Default):</strong> Use <code>H1-H6</code> to mark titles. Everything between
-                    headings becomes the content.</li>
-                <li><strong>Bold Line:</strong> Any line that is <strong>completely bold</strong> will be treated as a
-                    title.</li>
-                <li><strong>Colon:</strong> Use the format <code>Title: Content</code> for simple, single-line items.
-                </li>
-            </ul>
         </div>
     </div>
 
