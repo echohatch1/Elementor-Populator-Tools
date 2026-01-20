@@ -123,8 +123,13 @@ function process() {
         const result = JSON.stringify(data);
 
         navigator.clipboard.writeText(result).then(() => {
-            msg.style.color = "green";
-            msg.innerText = `Success! Populated ${updateCount} items. Paste back into Elementor.`;
+            if (listItems.length > updateCount) {
+                msg.style.color = "#d97706"; // Amber/Orange
+                msg.innerText = `Partial Success! Populated ${updateCount} of ${listItems.length} items. (Widget was too small). Paste back into Elementor.`;
+            } else {
+                msg.style.color = "green";
+                msg.innerText = `Success! Populated all ${updateCount} items. Paste back into Elementor.`;
+            }
         }).catch(err => {
             console.error(err);
             msg.style.color = "red";

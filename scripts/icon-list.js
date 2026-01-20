@@ -100,8 +100,13 @@ function process() {
         const result = JSON.stringify(data);
 
         navigator.clipboard.writeText(result).then(() => {
-            msg.style.color = "green";
-            msg.innerText = `Success! Populated icon list with ${updateCount} items. Use 'Paste from other site' in Elementor.`;
+            if (items.length > updateCount) {
+                msg.style.color = "#d97706"; // Amber/Orange
+                msg.innerText = `Partial Success! Populated ${updateCount} of ${items.length} items. (Widget was too small). Use 'Paste from other site' in Elementor.`;
+            } else {
+                msg.style.color = "green";
+                msg.innerText = `Success! Populated all ${updateCount} items. Use 'Paste from other site' in Elementor.`;
+            }
         }).catch(err => {
             msg.style.color = "red";
             msg.innerText = "Clipboard error. Check browser console.";
