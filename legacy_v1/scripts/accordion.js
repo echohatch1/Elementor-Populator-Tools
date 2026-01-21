@@ -80,7 +80,7 @@ function process() {
             widget = Array.isArray(data.elements) ? data.elements.find(isAccordion) : null;
         }
 
-        if (!widget) throw new Error("Could not find a valid Nested Accordion widget structure. Ensure you copied a Nested Accordion.");
+        if (!widget) throw new Error("Could not find a valid Accordion widget structure. Ensure you copied an Accordion.");
 
         // 3. Update Data
         const accordionItems = widget.settings.items; // Control titles

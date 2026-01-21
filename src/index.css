@@ -1,0 +1,409 @@
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 30px auto;
+  background: #f0f2f5;
+  padding: 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0;
+  color: #00a3e0;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+h2 {
+  margin-top: 0;
+  color: #00a3e0;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+/* Quill Overrides (Optional) */
+.quill .ql-toolbar {
+  border-radius: 5px 5px 0 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  border-color: #ddd !important;
+}
+
+.quill .ql-container {
+  border-radius: 0 0 5px 5px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  border-color: #ddd !important;
+  height: 200px;
+}
+
+/* Reset Global Headings inside Quill Editor */
+.quill .ql-editor h1,
+.quill .ql-editor h2,
+.quill .ql-editor h3,
+.quill .ql-editor h4,
+.quill .ql-editor h5,
+.quill .ql-editor h6 {
+  border-bottom: none;
+  color: inherit;
+  margin-top: 0.5em;
+  padding-bottom: 0;
+  font-family: inherit;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin: 20px 0 8px;
+  color: #4a5568;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: monospace;
+  box-sizing: border-box;
+}
+
+.process-btn {
+  background: #00a3e0;
+  color: white;
+  border: none;
+  padding: 16px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.process-btn:hover {
+  background: #0081b1;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.instructions {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #444;
+}
+
+.instructions h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.instructions ol,
+.instructions ul {
+  font-size: 0.9em;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.instructions li {
+  margin-bottom: 5px;
+}
+
+/* Parsing Strategy Selector */
+.strategy-selector {
+  margin-bottom: 20px;
+  background: #eef;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.strategy-label {
+  margin: 0 0 10px 0;
+  font-size: 0.9em;
+  color: #555;
+  display: block;
+  font-weight: bold;
+}
+
+.strategy-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.9em;
+}
+
+.strategy-option {
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+  color: #444;
+}
+
+/* Editor Container */
+/* Editor Container */
+#editor-container {
+  height: 200px;
+  background: white;
+}
+
+/* Tooltip Styles */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background: #00a3e0;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tooltip-content {
+  visibility: hidden;
+  width: 250px;
+  max-width: calc(100vw - 80px);
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  /* Position above */
+  right: -10px;
+  /* Anchor to right edge */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.85em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /* Arrow at bottom */
+  right: 15px;
+  /* Arrow aligns with icon */
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Global Header */
+.global-header {
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  /* Subtle gradient */
+  padding: 25px 0;
+  /* More breathing room */
+  border-bottom: 4px solid #00a3e0;
+  margin-bottom: 30px;
+}
+
+.header-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.global-header .logo img {
+  max-width: 100%;
+}
+
+.global-header nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.global-header nav a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.global-header nav a:hover,
+.global-header nav a.active {
+  color: #00a3e0;
+}
+
+/* Global Footer */
+.global-footer {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  color: #888;
+  font-size: 0.85em;
+  border-top: 1px solid #eee;
+}
+
+.global-footer .footer-container a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+/* Strategy Selector Header */
+.strategy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.strategy-header .strategy-label {
+  margin: 0;
+}
+
+/* Footer Text */
+.footer-disclaimer {
+  font-size: 0.8em;
+  margin-top: 5px;
+  color: #aaa;
+}
+
+.footer-version {
+  font-size: 0.75em;
+  margin-top: 5px;
+  color: #ccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .global-header nav {
+    justify-content: center;
+  }
+}
+
+/* Home Page Styles */
+.home-container {
+  text-align: center;
+}
+
+.home-intro {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tool-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.tool-card {
+  height: 100%;
+  transition: transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  /* Ensure padding doesn't affect height if added */
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+}
+
+.tool-icon {
+  color: #00a3e0;
+  margin-bottom: 15px;
+}
+
+.tool-card h2 {
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+/* Status Modifiers */
+.status.error {
+  color: #e53e3e;
+}
+
+.status.success {
+  color: #38a169;
+}
+
+.status.warning {
+  color: #d97706;
+}
+
+/* Checkbox Option */
+.checkbox-option {
+  margin: 10px 0 20px 0;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: normal;
+  color: #444;
+  font-size: 0.9em;
+}
+
+.checkbox-label input {
+  margin-right: 8px;
+}
