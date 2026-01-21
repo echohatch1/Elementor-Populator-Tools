@@ -211,3 +211,100 @@ textarea {
     visibility: visible;
     opacity: 1;
 }
+
+/* Global Header */
+.global-header {
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    /* Subtle gradient */
+    padding: 25px 0;
+    /* More breathing room */
+    border-bottom: 4px solid #00a3e0;
+    margin-bottom: 30px;
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.global-header .logo img {
+    max-width: 100%;
+}
+
+.global-header nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.global-header nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.global-header nav a:hover,
+.global-header nav a.active {
+    color: #00a3e0;
+}
+
+/* Global Footer */
+.global-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    color: #888;
+    font-size: 0.85em;
+    border-top: 1px solid #eee;
+}
+
+.global-footer .footer-container a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Strategy Selector Header */
+.strategy-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.strategy-header .strategy-label {
+    margin: 0;
+}
+
+/* Footer Text */
+.footer-disclaimer {
+    font-size: 0.8em;
+    margin-top: 5px;
+    color: #aaa;
+}
+
+.footer-version {
+    font-size: 0.75em;
+    margin-top: 5px;
+    color: #ccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .global-header nav {
+        justify-content: center;
+    }
+}
