@@ -122,7 +122,7 @@ export default function IconListPopulator() {
                         checked={stripStyles}
                         onChange={(e) => setStripStyles(e.target.checked)}
                     />
-                    Strip inline styles (remove color, font size, etc.)
+                    Strip inline styles (remove colors, font sizes, etc.)
                 </label>
             </div>
 
