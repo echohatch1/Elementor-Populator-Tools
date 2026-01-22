@@ -75,6 +75,9 @@ export default function IconListPopulator() {
                 // Strip block tags to get clean inline HTML
                 let cleanContent = items[i].replace(/<\/?(li|ul|ol|p|div|h[1-6])[^>]*>/gi, '');
 
+                // Replace &nbsp; with normal space
+                cleanContent = cleanContent.replace(/&nbsp;/gi, ' ');
+
                 if (stripStyles) {
                     cleanContent = cleanContent.replace(/\sstyle=['"][^'"]*['"]/gi, '');
                 }
