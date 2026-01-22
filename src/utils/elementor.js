@@ -179,10 +179,67 @@ function splitBlockHtml(block) {
     // Remove all preceding nodes
     deletePrecedingNodes(contentColonNode, contentBlock);
 
+    // Clean up edges (empty tags, whitespace)
+    cleanBlockEnd(titleBlock);
+    cleanBlockStart(contentBlock);
+
     return {
         title: titleBlock.innerHTML, // HTML Preserved!
         content: contentBlock.innerHTML // HTML Preserved!
     };
+}
+
+function cleanBlockStart(root) {
+    while (root.firstChild) {
+        const node = root.firstChild;
+        if (node.nodeType === 3) { // Text
+            node.nodeValue = node.nodeValue.replace(/^[\s\u00A0]+/, ''); // Trim start including nbsp
+            if (node.nodeValue.length === 0) {
+                root.removeChild(node);
+            } else {
+                break; // Found content
+            }
+        } else if (node.nodeType === 1) { // Element
+            if (['BR', 'IMG', 'HR', 'INPUT'].includes(node.tagName)) break;
+
+            cleanBlockStart(node); // Recurse
+
+            // If empty after cleaning, remove it
+            if (node.childNodes.length === 0) {
+                root.removeChild(node);
+            } else {
+                break; // Found content inside
+            }
+        } else {
+            root.removeChild(node); // Comments etc
+        }
+    }
+}
+
+function cleanBlockEnd(root) {
+    while (root.lastChild) {
+        const node = root.lastChild;
+        if (node.nodeType === 3) { // Text
+            node.nodeValue = node.nodeValue.replace(/[\s\u00A0]+$/, ''); // Trim end including nbsp
+            if (node.nodeValue.length === 0) {
+                root.removeChild(node);
+            } else {
+                break;
+            }
+        } else if (node.nodeType === 1) { // Element
+            if (['BR', 'IMG', 'HR', 'INPUT'].includes(node.tagName)) break;
+
+            cleanBlockEnd(node); // Recurse
+
+            if (node.childNodes.length === 0) {
+                root.removeChild(node);
+            } else {
+                break;
+            }
+        } else {
+            root.removeChild(node);
+        }
+    }
 }
 
 function deleteFollowingNodes(targetNode, root) {
