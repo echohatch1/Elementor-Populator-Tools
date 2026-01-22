@@ -3,6 +3,7 @@ import Layout from './layouts/Layout';
 import AccordionPopulator from './pages/AccordionPopulator';
 import IconListPopulator from './pages/IconListPopulator';
 import Home from './pages/Home';
+import Terms from './pages/Terms';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="accordion" element={<AccordionPopulator />} />
           <Route path="icon-list" element={<IconListPopulator />} />
+          <Route path="terms" element={<Terms />} />
         </Route>
       </Routes>
     </BrowserRouter>
