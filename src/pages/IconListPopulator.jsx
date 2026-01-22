@@ -102,6 +102,8 @@ export default function IconListPopulator() {
 
     return (
         <div className="card">
+            <title>Icon List Populator - Elementor Populator Tools</title>
+            <meta name="description" content="Bulk populate Elementor Icon List widgets. Maintain rich text formatting like links, bold, and italics." />
             <h1>Elementor Icon List Populator</h1>
 
 

@@ -390,6 +390,58 @@ textarea {
   color: #d97706;
 }
 
+/* Home Page Details */
+.home-hero {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  border-bottom: none;
+}
+
+.home-details {
+  margin-top: 50px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.detail-section {
+  text-align: center;
+  /* Center visuals */
+}
+
+.detail-icon {
+  background: #e0f2fe;
+  /* Light blue bg */
+  color: #00a3e0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+}
+
+.detail-section h3 {
+  color: #00a3e0;
+  margin-bottom: 10px;
+  border-bottom: none;
+  font-size: 1.1em;
+}
+
+.detail-section p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
 /* Checkbox Option */
 .checkbox-option {
   margin: 10px 0 20px 0;

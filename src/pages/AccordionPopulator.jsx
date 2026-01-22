@@ -125,6 +125,8 @@ export default function AccordionPopulator() {
 
     return (
         <div className="card">
+            <title>Accordion Populator - Elementor Populator Tools</title>
+            <meta name="description" content="Bulk populate Elementor Accordion widgets from rich text content. Split by headings, bold lines, or colons." />
             <h1>Elementor Accordion Populator</h1>
 
             <div className="strategy-selector">
