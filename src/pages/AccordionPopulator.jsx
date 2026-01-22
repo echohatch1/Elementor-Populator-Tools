@@ -108,11 +108,11 @@ export default function AccordionPopulator() {
             const result = JSON.stringify(data);
             navigator.clipboard.writeText(result).then(() => {
                 if (missingEditorsCount > 0) {
-                    setStatus({ type: 'warning', msg: `Warning: Populated ${updateCount} items. Skipped ${missingEditorsCount} items (Missing Text Editor widget).` });
+                    setStatus({ type: 'warning', msg: `Warning: Populated ${updateCount} items. Skipped ${missingEditorsCount} items (Missing Text Editor widget). Use "Paste from other site" in Elementor.` });
                 } else if (listItems.length > updateCount) {
-                    setStatus({ type: 'warning', msg: `Partial Success! Populated ${updateCount} of ${listItems.length} items. (Widget too small - add more items).` });
+                    setStatus({ type: 'warning', msg: `Partial Success! Populated ${updateCount} of ${listItems.length} items. (Widget too small - add more items). Use "Paste from other site" in Elementor.` });
                 } else {
-                    setStatus({ type: 'success', msg: `Success! Populated all ${updateCount} items. Copied to clipboard.` });
+                    setStatus({ type: 'success', msg: `Success! Populated all ${updateCount} items and copied to clipboard. Use "Paste from other site" in Elementor.` });
                 }
             }).catch(err => {
                 setStatus({ type: 'error', msg: "Browser blocked clipboard copy." });
@@ -224,7 +224,7 @@ export default function AccordionPopulator() {
                         </ul>
                     </li>
                     <li><strong>Run Tool:</strong> Paste the copied JSON from Elementor into box 2 and click "Populate".</li>
-                    <li><strong>Paste back into Elementor:</strong> Right-click inside Elementor and select <strong>"Paste from other site"</strong>.</li>
+                    <li><strong>Paste back into Elementor:</strong> Right-click inside Elementor and select <strong>"Paste from other site"</strong>. (Note: The visual editor may not update immediately; click on the content to refresh the view).</li>
                 </ol>
             </div>
         </div>
