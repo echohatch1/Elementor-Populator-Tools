@@ -33,6 +33,6 @@ export const quillModules = {
 export const quillFormats = [
     'header',
     'bold', 'italic',
-    'list', 'bullet',
+    'list',
     'link'
 ];
