@@ -10,7 +10,7 @@ export default function AccordionPopulator() {
     const [elementorCode, setElementorCode] = useState('');
     const [strategy, setStrategy] = useState('heading');
     const [status, setStatus] = useState({ type: '', msg: '' });
-    const [stripStyles, setStripStyles] = useState(false);
+    const [stripStyles, setStripStyles] = useState(true);
 
     const handleProcess = () => {
         if (!editorContent || !elementorCode) {

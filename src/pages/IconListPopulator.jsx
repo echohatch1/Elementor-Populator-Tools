@@ -8,7 +8,7 @@ export default function IconListPopulator() {
     const [editorContent, setEditorContent] = useState('');
     const [elementorCode, setElementorCode] = useState('');
     const [status, setStatus] = useState({ type: '', msg: '' });
-    const [stripStyles, setStripStyles] = useState(false);
+    const [stripStyles, setStripStyles] = useState(true);
 
     const handleProcess = () => {
         if (!elementorCode) {
