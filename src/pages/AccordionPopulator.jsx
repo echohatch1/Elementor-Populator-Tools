@@ -77,13 +77,21 @@ export default function AccordionPopulator() {
             for (let i = 0; i < listItems.length; i++) {
                 if (i >= accordionItems.length || i >= contentContainers.length) break;
 
-                accordionItems[i].item_title = listItems[i].title.replace(/<[^>]*>/g, '').trim();
+                // Clean Title: Strip tags and replace NBSP (entity & unicode) with space
+                accordionItems[i].item_title = listItems[i].title
+                    .replace(/<[^>]*>/g, '')
+                    .replace(/(&nbsp;|\u00A0)/g, ' ')
+                    .trim();
 
                 const container = contentContainers[i];
                 const textEditor = findWidgetRecursive(container, 'text-editor');
 
                 if (textEditor) {
                     let finalContent = listItems[i].content;
+
+                    // Always clean &nbsp; from content too, as requested
+                    finalContent = finalContent.replace(/(&nbsp;|\u00A0)/g, ' ');
+
                     if (stripStyles) {
                         finalContent = finalContent.replace(/\sstyle=['"][^'"]*['"]/gi, '');
                     }
