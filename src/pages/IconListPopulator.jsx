@@ -136,6 +136,9 @@ export default function IconListPopulator() {
                 value={elementorCode}
                 onChange={(e) => setElementorCode(e.target.value)}
                 placeholder='{"type":"elementor","siteurl":...'
+                autoCorrect="off"
+                spellCheck="false"
+                autoCapitalize="off"
             />
 
             <button className="process-btn" onClick={handleProcess}>
